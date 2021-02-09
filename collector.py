@@ -14,7 +14,7 @@ import psutil
 def get_cpu_percent():
     """Get the net I/O counters
     """
-    return psutil.cpu_percent(interval=0.1, percpu=True)
+    return psutil.cpu_percent(interval=None, percpu=True)
 
 
 def get_memory_percent():
@@ -34,6 +34,21 @@ def get_net_io_counters_byte_recv():
     return psutil.net_io_counters(pernic=False).bytes_recv
 
 
+data = get_net_io_counters_byte_recv()
+data_memory = get_memory_percent()
+array_data = []
+
+for index, line in enumerate(data):
+    """f = open('data.txt', 'w')
+    array_data.append(data)
+    f.write(str(data) + '\n')
+    f.close()"""
+    print(data[index])
+
+
 def main():
-    if __name__ == '__main__':
-        main()
+    print("hello world")
+
+
+if __name__ == '__main__':
+    main()
