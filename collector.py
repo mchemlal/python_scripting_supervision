@@ -16,21 +16,16 @@ import time
 import mariadb
 import psutil
 import datetime
-import wmi
 
 
 def get_battery_state():
+    """
+        Collect the battery state in real time in percent
+
+        return: rate of use related to cpu
+    """
     battery = psutil.sensors_battery().percent
-    battery_format = f"{battery} %"
-    return battery_format
-
-
-def get_sensors_temperature():
-    if hasattr(psutil, "sensors_temperatures"):
-        temps = psutil.sensors_temperatures()
-    else:
-        temps = {}
-    return temps
+    return battery
 
 
 def get_cpu_percent():
@@ -179,7 +174,7 @@ def main():
             """
             while loop to loop over the overall reading every 10 seconds 
             """
-            time.sleep(5)
+            time.sleep(3)
             """
             data recorded into the data.txt file with the write()
             using the variable writen above into the the fast strings down below
@@ -205,8 +200,8 @@ def main():
             f.write(f"{datetime.datetime.now()} -> data received : {data_byte_recv} \n")
             f.write(f"{datetime.datetime.now()} -> data sent : {data_byte_sent} \n")
             f.write("\n")
-            f.write("< BATTERY DATA >")
-            f.write(f"{datetime.datetime.now()} -> {data_battery} left \n")
+            f.write("< BATTERY DATA > \n")
+            f.write(f"{datetime.datetime.now()} -> {data_battery} % left \n")
             f.write("-----------------**HOLD ON THE NEXT BATCH LOADING IN THE NEXT 10 "
                     "SECONDS**------------------------------")
             f.write("\n")
@@ -270,14 +265,22 @@ def main():
 
             insert_intodatabase_record(data_memory_query)
 
+            """
+            inserting data to the BATTERY TABLE
+            """
+            data_memory_query = f"INSERT INTO battery" \
+                                f"(battery_level)" \
+                                f"VALUES" \
+                                f"({data_battery})"
+
+            insert_intodatabase_record(data_memory_query)
+
         except KeyboardInterrupt:
             break
         """
         exit condition 
         """
 
-
-print(get_sensors_temperature())
 
 if __name__ == '__main__':
     main()
