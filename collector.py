@@ -62,7 +62,7 @@ def get_virtual_memory():
 
 
 """
-variables dedicated to be inserted into the fast strings in the VIRTUAL MEMORY TABLE
+variables dedicated to be inserted into the fast strings in the VIRTUAL MEMORY query
 """
 virtual_memory_total = psutil.virtual_memory().total
 virtual_memory_available = psutil.virtual_memory().available
@@ -94,7 +94,7 @@ def get_disk_usage():
 
 
 """
-variables dedicated to be inserted into the fast strings in the DISK USAGE TABLE
+variables dedicated to be inserted into the fast strings in the DISK USAGE query 
 """
 disk_usage_total = psutil.disk_usage('/').total
 disk_usage_used = psutil.disk_usage('/').used
@@ -172,11 +172,11 @@ def main():
             data_battery = get_battery_state()
 
             """
-            while loop to loop over the overall reading every 10 seconds 
+            while loop to loop over the overall readings every 10 seconds 
             """
-            time.sleep(3)
+            time.sleep(10)
             """
-            data recorded into the data.txt file with the write()
+            data recorded into the data.txt file with the write() function
             using the variable writen above into the the fast strings down below
             """
             f = open("data.txt", "a+")

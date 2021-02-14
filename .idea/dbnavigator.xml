@@ -25,8 +25,8 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
-      <connection connection-id="98b6b757-54cc-4841-b8af-b75a8f2921db">
-        <schema name="supervision" object-types="procedure, dataset trigger, view, constraint, column, function, index, table" />
+      <connection connection-id="43d1a1b1-bd08-4b53-bae4-9e7c364601ab">
+        <schema name="supervision" object-types="procedure, function, view, table" />
       </connection>
     </loaded-nodes>
   </component>
