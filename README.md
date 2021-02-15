@@ -11,4 +11,4 @@ ressources :
   - Grafana -> data vizualisation tool
   
   
-  ![Screenshot](photo graphique grafana.png)
+https://github.com/mchemlal/python_scripting_supervision/issues/1#issue-808480612
