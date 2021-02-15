@@ -10,5 +10,7 @@ ressources :
   - mariadb connector -> to be able to link the program to my sql database
   - Grafana -> data vizualisation tool
   
+  <img src="https://cloud.githubusercontent.com/assets/4307137/10105283/251b6868-63ae-11e5-9918-b789d9d682ec.png" width="15%"></img> 
   
-https://github.com/mchemlal/python_scripting_supervision/issues/1#issue-808480612
+  
+<img src="https://github.com/mchemlal/python_scripting_supervision/issues/1#issue-808480612"></img>
