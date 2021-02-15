@@ -1,6 +1,6 @@
 # python_scripting_supervision
 
-It's a programm dedictaed to monitoring several parts of my labtop and get the datas out of into a text file and then into a SQl database (workbench) and upload these datas into a data vizualisation tool which allow me to have an overview of my labtop state in real time through graphics. 
+It's a programm dedictaed to monitoring several parts of my labtop and getting the datas out into a text file and then into a SQL database (Workbench). Next the dats are uploaded into a data vizualisation tool which allows me to have an overview of my labtop state at a specific time through graphics. 
 
 ressources :
   - python (PyCharm)
